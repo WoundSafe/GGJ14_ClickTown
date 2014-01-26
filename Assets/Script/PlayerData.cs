@@ -20,6 +20,7 @@ public class PlayerData : MonoBehaviour {
 
     public int workDone = 0;
     public int placesOwned = 0;
+    public int areasFullyExplored = 0;
 
     enum PayMode
     {
@@ -108,6 +109,11 @@ public class PlayerData : MonoBehaviour {
         this.passiveSilver += passiveSilver;
         this.passiveCopper += passiveCopper;
     }
+
+    public long CalcTotalWealth()
+    {
+        return displayCopper + displaySilver * 100 + displayGold * 10000;
+    }
     
 
     void OnGUI()
@@ -130,6 +136,7 @@ public class PlayerData : MonoBehaviour {
             GUILayout.BeginHorizontal();
             GUILayout.Label("<size=24>Jobs Worked: " + workDone + "</size>");
             GUILayout.Label("<size=24>Places Owned: " + placesOwned + "</size>");
+            GUILayout.Label("<size=24>Areas Fully Explored: " + areasFullyExplored + "</size>");
             GUILayout.EndHorizontal();
 
             GUILayout.EndVertical();

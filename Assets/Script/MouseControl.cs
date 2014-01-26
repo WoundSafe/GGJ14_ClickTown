@@ -120,7 +120,7 @@ public class MouseControl : MonoBehaviour
         //GUILayout.Label("Camera Postion: " + transform.position.ToString());
         //GUILayout.Label("lastMouse: " + lastMouse.ToString());
         //GUILayout.Label("worldTouchPosition: " + worldTouchPoistion.ToString());
-        GUI.Label(new Rect(Screen.width / 2, 50, 100, 50), "FPS: " + fps);
+        //GUI.Label(new Rect(Screen.width / 2, 50, 100, 50), "FPS: " + fps);
     }
 
 }
