@@ -39,10 +39,10 @@ public class POI_Data : MonoBehaviour {
 
     public void WorkDone()
     {
-        interest++;
+        //interest++;
 
         Color color = parentTile.renderer.material.color;
-        color.a = interest / 255.0f;
+        color.a = color.a + 1.0f / 255.0f;
         parentTile.renderer.material.color = color;
     }
 
