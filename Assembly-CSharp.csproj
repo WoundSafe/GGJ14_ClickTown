@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\FadeTest.cs" />
+     <Compile Include="Assets\Script\BuyButtonControll.cs" />
      <Compile Include="Assets\Script\CoinToss.cs" />
+     <Compile Include="Assets\Script\IButtonRelease.cs" />
      <Compile Include="Assets\Script\MouseControl.cs" />
      <Compile Include="Assets\Script\POI_Data.cs" />
      <Compile Include="Assets\Script\PlayerData.cs" />

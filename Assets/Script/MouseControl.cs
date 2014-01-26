@@ -5,12 +5,13 @@ public class MouseControl : MonoBehaviour
 {
 
 	bool dragMode = false;
-    bool sendRelease = false;
-    WorkButtonControll buttonTarget;
+    bool sendRelease = false;    
 	Vector3 lastMouse;
 	Vector3 originalCameraPosition;
 	Vector3 worldTouchPoistion;
 	Vector3 worldToCamera;
+
+    IButton releaseTarget;
 
     float fps_counter = 0;
     float deltaTime = 0;
@@ -44,13 +45,23 @@ public class MouseControl : MonoBehaviour
             {
                 if (rayHit.transform.tag == "WorkButton")
                 {
+                    WorkButtonControll buttonTarget;
                     buttonTarget = rayHit.transform.GetComponent<WorkButtonControll>();
                     buttonTarget.Clicked();
                     sendRelease = true;
+                    releaseTarget = buttonTarget as IButton;
                 }
                 else if (rayHit.transform.tag == "POI")
                 {
                     rayHit.transform.GetComponent<POI_Data>().ToggleShowActions();
+                }
+                else if (rayHit.transform.tag == "BuyButton")
+                {
+                    BuyButtonControll buttonTarget;
+                    buttonTarget = rayHit.transform.GetComponent<BuyButtonControll>();
+                    buttonTarget.Clicked();
+                    sendRelease = true;
+                    releaseTarget = buttonTarget as IButton;
                 }
                 else
                 {
@@ -74,7 +85,7 @@ public class MouseControl : MonoBehaviour
             if (sendRelease)
             {
                 sendRelease = false;
-                buttonTarget.Released();
+                releaseTarget.Release();
             }
 		}
 

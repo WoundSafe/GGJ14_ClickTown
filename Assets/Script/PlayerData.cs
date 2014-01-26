@@ -19,9 +19,14 @@ public class PlayerData : MonoBehaviour {
     public float passiveGold = 0;
 
     public int workDone = 0;
-    public int conJobs = 0;
+    public int placesOwned = 0;
 
-
+    enum PayMode
+    {
+        Copper,
+        Silver,
+        Gold
+    }
 
 
     public GUISkin skin;
@@ -51,20 +56,58 @@ public class PlayerData : MonoBehaviour {
         {
             if (Input.GetTouch(1).phase == TouchPhase.Began) displayStats = !displayStats;
         }
-        else if (Input.GetKeyDown(KeyCode.I))
+        else if (Input.GetKeyDown(KeyCode.S))
         {
             displayStats = !displayStats;
         }
 
-        if (displayInstruction && Time.time > 4) displayInstruction = false;
+        if (displayInstruction && Time.time > 4) displayInstruction = false;       
 
-        
+        //update passive
+        copper += passiveCopper * Time.deltaTime;
+        silver += passiveSilver * Time.deltaTime;
+        gold += passiveGold * Time.deltaTime;
 
         displayCopper = (int)Mathf.Floor(copper);
         displaySilver = (int)Mathf.Floor(silver);
         displayGold = (int)Mathf.Floor(gold);
 	}
 
+    public bool CanPurchase(int goldCost, int silverCost, int copperCost)
+    {
+        bool result = false;
+
+        long totalCost = copperCost + silverCost * 100 + goldCost * 10000;
+        long totalWealth = displayCopper + displaySilver * 100 + displayGold * 10000;
+
+        if (totalWealth >= totalCost)
+        {
+            result = true;
+
+            totalWealth -= totalCost;
+
+            gold -= displayGold;
+            silver -= displaySilver;
+            copper -= displayCopper;
+
+            gold += totalWealth / 10000;
+            totalWealth = totalWealth % 10000;
+            silver += totalWealth / 100;
+            totalWealth = totalWealth % 100;
+            copper += totalWealth;
+
+            placesOwned += 1;
+        }
+
+        return result;
+    }
+
+    public void AddPassive(float passiveGold, float passiveSilver, float passiveCopper)
+    {
+        this.passiveGold += passiveGold;
+        this.passiveSilver += passiveSilver;
+        this.passiveCopper += passiveCopper;
+    }
     
 
     void OnGUI()
@@ -75,32 +118,38 @@ public class PlayerData : MonoBehaviour {
 
         if (displayStats)
         {
-            GUILayout.BeginVertical();
-            GUILayout.Label("Player Stats");
-            GUILayout.Label("Money");
-            GUILayout.Label(System.String.Format("Gold: {0}   Silver: {1}   Copper: {2}",
+            GUILayout.BeginVertical(skin.GetStyle("TitleBar"));
+            GUILayout.Label("<size=50>Player Stats</size>");
+            GUILayout.Label("<size=24>Money</size>");
+            GUILayout.Label(System.String.Format("<size=24>Gold: {0}   Silver: {1}   Copper: {2}</size>",
                 displayGold, displaySilver, displayCopper), GUILayout.Width(Screen.width));
-            GUILayout.Label("Passive Income");
-            GUILayout.Label(System.String.Format("Gold: {0}   Silver: {1}   Copper: {2}",
+            GUILayout.Label("<size=24>Passive Income</size>");
+            GUILayout.Label(System.String.Format("<size=24>Gold: {0}   Silver: {1}   Copper: {2}</size>",
                 passiveGold, passiveSilver, passiveCopper), GUILayout.Width(Screen.width));
 
             GUILayout.BeginHorizontal();
-            GUILayout.Label("Jobs Worked: " + workDone);
-            GUILayout.Label("Cons Completed: " + conJobs);
+            GUILayout.Label("<size=24>Jobs Worked: " + workDone + "</size>");
+            GUILayout.Label("<size=24>Places Owned: " + placesOwned + "</size>");
             GUILayout.EndHorizontal();
 
             GUILayout.EndVertical();
 
-            if (GUI.Button(new Rect(Screen.width - 110, Screen.height - 60, 100, 50), "Quit"))
+            //do not show if on the web
+            if (Application.platform != RuntimePlatform.NaCl &&
+                Application.platform != RuntimePlatform.OSXWebPlayer &&
+                Application.platform != RuntimePlatform.WindowsWebPlayer)
             {
-                Application.Quit();
+                if (GUI.Button(new Rect(Screen.width - 110, Screen.height - 60, 100, 50), "<size=50>Quit</size>"))
+                {
+                    Application.Quit();
+                }
             }
         }
         else
         {
             GUILayout.BeginHorizontal();
-            GUILayout.Label(System.String.Format("Gold: {0}   Silver: {1}   Copper: {2}",
-                displayGold, displaySilver, displayCopper), GUILayout.Width(Screen.width));
+            GUILayout.Label(System.String.Format("<size=40>Gold: {0}   Silver: {1}   Copper: {2}</size>",
+                displayGold, displaySilver, displayCopper), skin.GetStyle("TitleBar"), GUILayout.Width(Screen.width));
             GUILayout.EndHorizontal();
         }
 
@@ -108,11 +157,11 @@ public class PlayerData : MonoBehaviour {
         {
             if (Application.platform == RuntimePlatform.Android)
             {
-                GUILayout.Label("Press with two fingers to toggle stat display");
+                GUILayout.Label("<size=50>Two-Finger tap to toggle stat display</size>");
             }
             else
             {
-                GUILayout.Label("Press I to toggle player stats");
+                GUILayout.Label("<size=50>Press S to toggle player stats</size>");
             }
         }
     }

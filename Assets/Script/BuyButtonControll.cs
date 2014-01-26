@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WorkButtonControll : MonoBehaviour, IButton {
+public class BuyButtonControll : MonoBehaviour, IButton
+{
 
     public Sprite buttonUp;
     public Sprite buttoneDown;
     public Sprite disabled;
 
-    public GameObject coinObject;
     public POI_Data parentPOI;
     PlayerData playerData;
 
@@ -16,29 +16,44 @@ public class WorkButtonControll : MonoBehaviour, IButton {
     public int workNeeded = 0;
     public float interestNeeded = 0;
 
-    public int workCopper = 0;
-    public int workSilver = 0;
-    public int workGold = 0;
-    
+    public int buyCostGold = 0;
+    public int buyCostSilver = 0;
+    public int buyCostCopper = 0;
 
-	// Use this for initialization
-	void Start () {
+    public float passiveGold = 0;
+    public float passiveSilver = 0;
+    public float passiveCopper = 0;
+
+    bool isPurchased = false;
+
+
+
+    // Use this for initialization
+    void Start()
+    {
         parentPOI = transform.parent.GetComponent<POI_Data>();
         playerData = GameObject.Find("PlayerData").GetComponent<PlayerData>();
-	}
+    }
 
     void OnEnable()
     {
         CheckUse();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         CheckUse();
-	}
+    }
 
     void CheckUse()
     {
+        if (isPurchased)
+        {
+            gameObject.SetActive(false);
+            return;
+        }
+
         playerData = GameObject.Find("PlayerData").GetComponent<PlayerData>();
         parentPOI = transform.parent.GetComponent<POI_Data>();
 
@@ -71,7 +86,7 @@ public class WorkButtonControll : MonoBehaviour, IButton {
             canUse = false;
             GetComponent<SpriteRenderer>().sprite = disabled;
         }
-        else if(!canUse)
+        else if (!canUse)
         {
             canUse = true;
             GetComponent<SpriteRenderer>().sprite = buttonUp;
@@ -81,19 +96,21 @@ public class WorkButtonControll : MonoBehaviour, IButton {
     public void Clicked()
     {
         if (!canUse) return;
-
         GetComponent<SpriteRenderer>().sprite = buttoneDown;
-        GameObject coin = GameObject.Instantiate(coinObject) as GameObject;
-        coin.transform.position = transform.position;
-        parentPOI.WorkDone();
-        playerData.AddMoney(workGold, workSilver, workCopper);
-        print(workCopper);
-        playerData.Work();
+
+        if (playerData.CanPurchase(buyCostGold, buyCostSilver, buyCostCopper))
+        {
+            playerData.AddPassive(passiveGold, passiveSilver, passiveCopper);
+            isPurchased = true;
+            Color color = parentPOI.parentTile.renderer.material.color;
+            color.a += 10.0f / 255.0f;
+            parentPOI.parentTile.renderer.material.color = color;
+        }
     }
 
     public void Release()
     {
-        if(canUse) GetComponent<SpriteRenderer>().sprite = buttonUp;
+        if (canUse) GetComponent<SpriteRenderer>().sprite = buttonUp;
         else GetComponent<SpriteRenderer>().sprite = disabled;
     }
 }
