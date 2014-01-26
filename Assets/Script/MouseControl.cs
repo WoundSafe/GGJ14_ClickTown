@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MouseDrag : MonoBehaviour {
+public class MouseControl : MonoBehaviour
+{
 
 	bool dragMode = false;
     bool sendRelease = false;

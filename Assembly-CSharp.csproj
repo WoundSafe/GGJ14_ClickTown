@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{7E283001-5748-D755-067A-772A5402F5A3}</ProjectGuid>
+	<ProjectGuid>{C34CE02B-1ED7-1D79-4A9E-26792162C4BD}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -47,7 +47,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\FadeTest.cs" />
-     <Compile Include="Assets\Script\MouseDrag.cs" />
+     <Compile Include="Assets\Script\CoinToss.cs" />
+     <Compile Include="Assets\Script\MouseControl.cs" />
+     <Compile Include="Assets\Script\POI_Data.cs" />
      <Compile Include="Assets\Script\WorkButtonControll.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
