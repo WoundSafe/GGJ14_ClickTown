@@ -50,6 +50,7 @@
      <Compile Include="Assets\Script\CoinToss.cs" />
      <Compile Include="Assets\Script\MouseControl.cs" />
      <Compile Include="Assets\Script\POI_Data.cs" />
+     <Compile Include="Assets\Script\PlayerData.cs" />
      <Compile Include="Assets\Script\WorkButtonControll.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

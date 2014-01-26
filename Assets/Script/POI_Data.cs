@@ -7,6 +7,8 @@ public class POI_Data : MonoBehaviour {
     int interest = 0;
     int kindness = 0;
 
+    bool showActions = false;
+
 	// Use this for initialization
 	void Start () {
 
@@ -21,7 +23,12 @@ public class POI_Data : MonoBehaviour {
                 parentTile = others[i].GetComponent<SpriteRenderer>();
             }
         }
-	
+
+        //put jobs to sleep
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(false);
+        }
 	}
 
     // Update is called once per frame
@@ -39,8 +46,25 @@ public class POI_Data : MonoBehaviour {
         parentTile.renderer.material.color = color;
     }
 
-    public void DisplayActions()
+    public void ToggleShowActions()
     {
+        showActions = !showActions;
 
+        if (showActions)
+        {
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                transform.GetChild(i).gameObject.SetActive(true);
+            }
+        }
+        else
+        {
+            {
+                for (int i = 0; i < transform.childCount; i++)
+                {
+                    transform.GetChild(i).gameObject.SetActive(false);
+                }
+            }
+        }
     }
 }

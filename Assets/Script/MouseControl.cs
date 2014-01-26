@@ -35,14 +35,14 @@ public class MouseControl : MonoBehaviour
             fps_counter = 0;
         }
 
-		if (Input.GetMouseButtonDown (0)) 
+		if (Input.GetMouseButtonDown (0) && Input.touchCount != 2) 
 		{
             Ray mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D rayHit;
 
             if (rayHit = Physics2D.GetRayIntersection(mouseRay))
             {
-                if (rayHit.transform.tag == "Button")
+                if (rayHit.transform.tag == "WorkButton")
                 {
                     buttonTarget = rayHit.transform.GetComponent<WorkButtonControll>();
                     buttonTarget.Clicked();
@@ -50,7 +50,7 @@ public class MouseControl : MonoBehaviour
                 }
                 else if (rayHit.transform.tag == "POI")
                 {
-                    print("meep");
+                    rayHit.transform.GetComponent<POI_Data>().ToggleShowActions();
                 }
                 else
                 {
@@ -94,10 +94,13 @@ public class MouseControl : MonoBehaviour
 		}
 
 
-	
-		lastMouse = Input.mousePosition;
-        worldTouchPoistion = Camera.main.ScreenToWorldPoint(lastMouse);
-        worldTouchPoistion.z = 0;
+
+        if (Input.touchCount != 2)
+        {
+            lastMouse = Input.mousePosition;
+            worldTouchPoistion = Camera.main.ScreenToWorldPoint(lastMouse);
+            worldTouchPoistion.z = 0;
+        }
 	}
 
     void OnGUI()
@@ -106,7 +109,7 @@ public class MouseControl : MonoBehaviour
         //GUILayout.Label("Camera Postion: " + transform.position.ToString());
         //GUILayout.Label("lastMouse: " + lastMouse.ToString());
         //GUILayout.Label("worldTouchPosition: " + worldTouchPoistion.ToString());
-        GUILayout.Label("FPS: " + fps);
+        GUI.Label(new Rect(Screen.width / 2, 50, 100, 50), "FPS: " + fps);
     }
 
 }
