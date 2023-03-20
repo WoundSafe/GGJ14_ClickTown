@@ -91,7 +91,7 @@ public class WorkButtonControll : MonoBehaviour, IButton {
             textToShow = string.Format("<size=30>You need to work <b>{0}</b> jobs.</size>", workNeeded);
             GetComponent<SpriteRenderer>().sprite = disabled;
         }
-        else if (parentPOI.parentTile.renderer.material.color.a < interestNeeded)
+        else if (parentPOI.parentTile.GetComponent<Renderer>().material.color.a < interestNeeded)
         {
             canUse = false;
             textToShow = string.Format("<size=30>This is not interesting enough.</size>");
@@ -120,13 +120,13 @@ public class WorkButtonControll : MonoBehaviour, IButton {
         playerData.AddMoney(workGold, workSilver, workCopper);
         print(workCopper);
         playerData.Work();
-        Color color = parentPOI.parentTile.renderer.material.color;
+        Color color = parentPOI.parentTile.GetComponent<Renderer>().material.color;
         if (color.a >= 1 && color.r == 1)
         {
             playerData.areasFullyExplored++;
             color.r = 0.999f;
         }
-        parentPOI.parentTile.renderer.material.color = color;
+        parentPOI.parentTile.GetComponent<Renderer>().material.color = color;
     }
 
     public void Release()

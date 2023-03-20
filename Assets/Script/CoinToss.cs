@@ -8,16 +8,16 @@ public class CoinToss : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Vector2 force = new Vector2(Random.Range(-55, 55), Random.Range(155, 188));
-        rigidbody2D.AddForce(force);
+        GetComponent<Rigidbody2D>().AddForce(force);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
         lifeTime += Time.deltaTime;
-        Color color = renderer.material.color;
+        Color color = GetComponent<Renderer>().material.color;
         color.a = Mathf.Lerp(1, 0, lifeTime - 0.5f);
-        renderer.material.color = color;
+        GetComponent<Renderer>().material.color = color;
 
         if (color.a == 0) GameObject.Destroy(this.gameObject);
 	}

@@ -41,9 +41,9 @@ public class POI_Data : MonoBehaviour {
     {
         //interest++;
 
-        Color color = parentTile.renderer.material.color;
+        Color color = parentTile.GetComponent<Renderer>().material.color;
         color.a = color.a + 1.0f / 255.0f;
-        parentTile.renderer.material.color = color;
+        parentTile.GetComponent<Renderer>().material.color = color;
     }
 
     public void ToggleShowActions()

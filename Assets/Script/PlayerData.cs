@@ -142,9 +142,7 @@ public class PlayerData : MonoBehaviour {
             GUILayout.EndVertical();
 
             //do not show if on the web
-            if (Application.platform != RuntimePlatform.NaCl &&
-                Application.platform != RuntimePlatform.OSXWebPlayer &&
-                Application.platform != RuntimePlatform.WindowsWebPlayer)
+            if (true)
             {
                 if (GUI.Button(new Rect(Screen.width - 110, Screen.height - 60, 100, 50), "<size=50>Quit</size>"))
                 {

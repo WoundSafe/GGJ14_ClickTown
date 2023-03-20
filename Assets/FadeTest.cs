@@ -12,9 +12,9 @@ public class FadeTest : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
-            Color test = renderer.material.color;
+            Color test = GetComponent<Renderer>().material.color;
             test.a -= 0.1f;
-            renderer.material.color = test;
+            GetComponent<Renderer>().material.color = test;
         }
 	
 	}

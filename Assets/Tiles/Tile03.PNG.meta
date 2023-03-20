@@ -1,32 +1,44 @@
 fileFormatVersion: 2
 guid: 14e1e84709b54254ba54eff7e9d79d41
 TextureImporter:
-  serializedVersion: 2
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
+    sRGBTexture: 1
     linearTexture: 0
-    correctGamma: 0
     fadeOut: 0
     borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
     mipMapFadeDistanceStart: 1
     mipMapFadeDistanceEnd: 3
   bumpmap:
     convertToNormalMap: 0
     externalNormalMap: 0
-    heightScale: .25
+    heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
-  generateCubemap: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
   seamlessCubemap: 0
   textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
-    filterMode: -1
+    serializedVersion: 2
+    filterMode: 1
     aniso: 1
-    mipBias: -1
-    wrapMode: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -34,18 +46,126 @@ TextureImporter:
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
-  spritePivot: {x: .5, y: .5}
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
   alphaIsTransparency: 1
+  spriteTessellationDetail: -1
   textureType: 8
-  buildTargetSettings:
-  - buildTarget: iPhone
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
     maxTextureSize: 1024
-    textureFormat: -2
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
     compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: 2
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
+    serializedVersion: 2
     sprites:
-    - name: Tile03_0
+    - serializedVersion: 2
+      name: Tile03_0
       rect:
         serializedVersion: 2
         x: 0
@@ -54,7 +174,19 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Tile03_1
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f938bf6b45dc08790800000000000000
+      internalID: -7529792813232585825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile03_1
       rect:
         serializedVersion: 2
         x: 512
@@ -63,7 +195,19 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Tile03_2
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c31e39ccd1583070800000000000000
+      internalID: 8086303139654669250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile03_2
       rect:
         serializedVersion: 2
         x: 1024
@@ -72,7 +216,19 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Tile03_3
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8b654478f36f5c10800000000000000
+      internalID: 2044462674603240331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile03_3
       rect:
         serializedVersion: 2
         x: 1536
@@ -81,7 +237,19 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Tile03_4
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8d17e093aecbac50800000000000000
+      internalID: 6677658074412948874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile03_4
       rect:
         serializedVersion: 2
         x: 0
@@ -90,7 +258,19 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Tile03_5
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13c77a44977a3bfa0800000000000000
+      internalID: -5786096956956246991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile03_5
       rect:
         serializedVersion: 2
         x: 512
@@ -99,7 +279,19 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Tile03_6
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28c5b924abe547950800000000000000
+      internalID: 6445881120748428418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile03_6
       rect:
         serializedVersion: 2
         x: 1024
@@ -108,7 +300,19 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Tile03_7
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03fd2d9ab3a86ad70800000000000000
+      internalID: 9054076089731833648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile03_7
       rect:
         serializedVersion: 2
         x: 1536
@@ -117,7 +321,19 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Tile03_8
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 036cb2083cb63aa40800000000000000
+      internalID: 5378260867423651376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile03_8
       rect:
         serializedVersion: 2
         x: 0
@@ -126,7 +342,19 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Tile03_9
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27d9dbe0a183f74f0800000000000000
+      internalID: -828882121845269134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile03_9
       rect:
         serializedVersion: 2
         x: 512
@@ -135,7 +363,19 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Tile03_10
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 601a3cf45eb3b24c0800000000000000
+      internalID: -4311286362205347578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile03_10
       rect:
         serializedVersion: 2
         x: 1024
@@ -144,7 +384,19 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Tile03_11
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c6c01c917ef2f480800000000000000
+      internalID: -8866744952435980600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile03_11
       rect:
         serializedVersion: 2
         x: 1536
@@ -153,7 +405,19 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Tile03_12
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1cde3adf02baf280800000000000000
+      internalID: -9008692323445449701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile03_12
       rect:
         serializedVersion: 2
         x: 0
@@ -162,7 +426,19 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Tile03_13
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da14cdcf18def2820800000000000000
+      internalID: 2895794227971375533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile03_13
       rect:
         serializedVersion: 2
         x: 512
@@ -171,7 +447,19 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Tile03_14
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58a513efcf2a46630800000000000000
+      internalID: 3919436783199279749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile03_14
       rect:
         serializedVersion: 2
         x: 1024
@@ -180,7 +468,19 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
-    - name: Tile03_15
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7905bb61f49f97400800000000000000
+      internalID: 322562966412808343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tile03_15
       rect:
         serializedVersion: 2
         x: 1536
@@ -189,5 +489,47 @@ TextureImporter:
         height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19868f2e91c67eea0800000000000000
+      internalID: -5843583133052016495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Tile03_4: -5786096956956246991
+      Tile03_0: -7529792813232585825
+      Tile03_2: 2044462674603240331
+      Tile03_6: 9054076089731833648
+      Tile03_11: -9008692323445449701
+      Tile03_1: 8086303139654669250
+      Tile03_13: 3919436783199279749
+      Tile03_12: 2895794227971375533
+      Tile03_8: -828882121845269134
+      Tile03_15: -5843583133052016495
+      Tile03_5: 6445881120748428418
+      Tile03_14: 322562966412808343
+      Tile03_7: 5378260867423651376
+      Tile03_3: 6677658074412948874
+      Tile03_9: -4311286362205347578
+      Tile03_10: -8866744952435980600
   spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
